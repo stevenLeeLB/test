@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 定义国际化消息 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<value>messages</value>
+		</property>
+	</bean>
+	<bean id="localResolver"
+		class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver" />
+		
+	<!-- 定义视图及路径 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.InternalResourceView
+			</value>
+		</property>
+		<!-- 定义JSP存放路径 -->
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<!-- 定义JSP后缀 -->
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<!--定义控制器 -->
+	<bean id="RegisterController"
+		class="com.login.action.RegisterController">
+		<property name="commandClass">
+			<value>com.spring.domian.Person</value>
+		</property>
+		<property name="formView">
+			<value>register</value>
+		</property>
+		<property name="successView">
+			<value>success</value>
+		</property>
+		<property name="validator">
+			<bean class="com.spring.validator.PersonValidator"></bean>
+		</property>
+	</bean>
+	<bean id="simpleUrlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/register.mvc">RegisterController</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

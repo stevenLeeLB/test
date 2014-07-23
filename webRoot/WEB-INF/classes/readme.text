@@ -1,0 +1,5 @@
+本项目为springMVC表单验证简单实例，支持国际化，发布就可以试验效果，本人有一个疑问：自己定义的一个表单实例，
+如：Person.java,非String类型如何在赋值person实例前提示输入数据类型错误，如不懂此提问，
+请屏蔽RegisterController类中的initBind方法，如果知道请告知，谢谢！
+
+http://localhost:8080/springMVC_Validator/register.mvc
