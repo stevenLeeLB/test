@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="springMVC_Validator"
+  id="myeclipse.1366961399954"
+  context-root="/springMVC_Validator"
+  j2ee-spec="5.0"
+  archive="springMVC_Validator.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
